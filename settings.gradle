@@ -66,6 +66,7 @@ dependencyResolutionManagement {
 
 rootProject.name = "cas-server"
 
+/*
 include "api:cas-server-core-api"
 include "api:cas-server-core-api-audit"
 include "api:cas-server-core-api-authentication"
@@ -84,6 +85,7 @@ include "api:cas-server-core-api-util"
 include "api:cas-server-core-api-validation"
 include "api:cas-server-core-api-web"
 include "api:cas-server-core-api-webflow"
+
 
 include "core:cas-server-core"
 include "core:cas-server-core-audit"
@@ -462,21 +464,22 @@ include "support:cas-server-support-yubikey-dynamodb"
 include "support:cas-server-support-yubikey-jpa"
 include "support:cas-server-support-yubikey-mongo"
 include "support:cas-server-support-yubikey-redis"
+*/
 
 include "webapp:cas-server-webapp"
-include "webapp:cas-server-webapp-bootadmin-server"
+//include "webapp:cas-server-webapp-bootadmin-server"
 include "webapp:cas-server-webapp-resources"
-include "webapp:cas-server-webapp-config"
-include "webapp:cas-server-webapp-config-server"
-include "webapp:cas-server-webapp-eureka-server"
+//include "webapp:cas-server-webapp-config"
+//include "webapp:cas-server-webapp-config-server"
+//include "webapp:cas-server-webapp-eureka-server"
 
 include "webapp:cas-server-webapp-init"
-include "webapp:cas-server-webapp-init-bootadmin-server"
-include "webapp:cas-server-webapp-init-config-server"
-include "webapp:cas-server-webapp-init-eureka-server"
-include "webapp:cas-server-webapp-init-tomcat"
+//include "webapp:cas-server-webapp-init-bootadmin-server"
+//include "webapp:cas-server-webapp-init-config-server"
+//include "webapp:cas-server-webapp-init-eureka-server"
+//include "webapp:cas-server-webapp-init-tomcat"
 
-include "webapp:cas-server-webapp-jetty"
-include "webapp:cas-server-webapp-tomcat"
-include "webapp:cas-server-webapp-undertow"
+//include "webapp:cas-server-webapp-jetty"
+//include "webapp:cas-server-webapp-tomcat"
+//include "webapp:cas-server-webapp-undertow"
 

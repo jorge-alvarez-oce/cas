@@ -1,4 +1,10 @@
 ext.libraries = [
+        cas_server_core_web_api: [ dependencies.create("org.apereo.cas:cas-server-core-web-api:6.4.3") ],
+        cas_server_core_web: [ dependencies.create("org.apereo.cas:cas-server-core-web:6.4.3") ],
+        cas_server_core_util_api: [ dependencies.create("org.apereo.cas:cas-server-core-util-api:6.4.3") ],
+        cas_server_core_configuration: [ dependencies.create("org.apereo.cas:cas-server-core-configuration:6.4.3") ],
+        cas_server_webapp_config: [ dependencies.create("org.apereo.cas:cas-server-webapp-config:6.4.3") ],
+
         acme                    : [
                 dependencies.create("org.shredzone.acme4j:acme4j-client:$acmeClientVersion") {
                     exclude(group: "org.slf4j", module: "slf4j-api")

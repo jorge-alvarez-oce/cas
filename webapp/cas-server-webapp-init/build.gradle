@@ -1,38 +1,45 @@
 description = "Apereo CAS Web Application Initializer"
 dependencies {
-    implementation project(":core:cas-server-core-web-api")
-    implementation project(":core:cas-server-core-util-api")
-    implementation project(":core:cas-server-core-configuration")
-    
-    provided project(":webapp:cas-server-webapp-config")
+    api libraries.springboottomcat
+    implementation libraries.log4j
 
-    testImplementation project(":support:cas-server-support-person-directory")
-    testImplementation project(":support:cas-server-support-themes")
+    implementation dependencies.create("org.apereo.cas:cas-server-core:6.4.3")
 
-    testImplementation project(":core:cas-server-core")
-    testImplementation project(":core:cas-server-core-audit")
-    testImplementation project(":core:cas-server-core-audit-api")
-    testImplementation project(":core:cas-server-core-logging")
-    testImplementation project(":core:cas-server-core-logout-api")
-    testImplementation project(":core:cas-server-core-logout")
-    testImplementation project(":core:cas-server-core-validation")
-    testImplementation project(":core:cas-server-core-validation-api")
-    testImplementation project(":core:cas-server-core-util")
-    testImplementation project(":core:cas-server-core-web")
-    
-    testImplementation project(":core:cas-server-core-cookie")
-    testImplementation project(":core:cas-server-core-webflow")
-    testImplementation project(":core:cas-server-core-webflow-api")
-    testImplementation project(":core:cas-server-core-tickets")
-    testImplementation project(":core:cas-server-core-services")
-    testImplementation project(":core:cas-server-core-services-authentication")
-    testImplementation project(":core:cas-server-core-authentication-attributes")
-    testImplementation project(":core:cas-server-core-authentication")
+    implementation dependencies.create("org.apereo.cas:cas-server-core-audit:6.4.3")
+    implementation dependencies.create("org.apereo.cas:cas-server-core-authentication:6.4.3")
+    implementation dependencies.create("org.apereo.cas:cas-server-core-authentication-mfa:6.4.3")
+    implementation dependencies.create("org.apereo.cas:cas-server-core-configuration:6.4.3")
+    implementation dependencies.create("org.apereo.cas:cas-server-core-cookie:6.4.3")
+    implementation dependencies.create("org.apereo.cas:cas-server-core-logout:6.4.3")
+    implementation dependencies.create("org.apereo.cas:cas-server-core-logging:6.4.3")
+    implementation dependencies.create("org.apereo.cas:cas-server-core-services:6.4.3")
+    implementation dependencies.create("org.apereo.cas:cas-server-core-tickets:6.4.3")
+    implementation dependencies.create("org.apereo.cas:cas-server-core-util:6.4.3")
+    implementation dependencies.create("org.apereo.cas:cas-server-core-validation:6.4.3")
+    implementation dependencies.create("org.apereo.cas:cas-server-core-web:6.4.3")
+    implementation dependencies.create("org.apereo.cas:cas-server-core-notifications:6.4.3")
 
-    testImplementation project(path: ":core:cas-server-core-authentication", configuration: "tests")
-    testImplementation project(path: ":core:cas-server-core-authentication-api", configuration: "tests")
-    testImplementation project(path: ":core:cas-server-core-util-api", configuration: "tests")
-    testImplementation project(path: ":support:cas-server-support-ldap-core", configuration: "tests")
+    implementation dependencies.create("org.apereo.cas:cas-server-support-actions:6.4.3")
+    implementation dependencies.create("org.apereo.cas:cas-server-support-person-directory:6.4.3")
+    implementation dependencies.create("org.apereo.cas:cas-server-support-themes:6.4.3")
+
+    //Client/Service registry
+    implementation dependencies.create("org.apereo.cas:cas-server-support-json-service-registry:6.4.3")
+    implementation dependencies.create("org.apereo.cas:cas-server-support-git-service-registry:6.4.3")
+    implementation dependencies.create("org.apereo.cas:cas-server-support-validation:6.4.3")
+    implementation dependencies.create("org.apereo.cas:cas-server-support-thymeleaf:6.4.3")
+    implementation dependencies.create("org.apereo.cas:cas-server-support-throttle:6.4.3")
+    implementation dependencies.create("org.apereo.cas:cas-server-support-pm:6.4.3")
+    implementation dependencies.create("org.apereo.cas:cas-server-support-pm-webflow:6.4.3")
+    implementation dependencies.create("org.apereo.cas:cas-server-support-redis-ticket-registry:6.4.3")
+    implementation dependencies.create("org.apereo.cas:cas-server-support-oauth:6.4.3")
+    implementation dependencies.create("org.apereo.cas:cas-server-support-oidc:6.4.3")
+    implementation dependencies.create("org.apereo.cas:cas-server-support-discovery-profile:6.4.3")
+    implementation dependencies.create("org.apereo.cas:cas-server-support-oauth-webflow:6.4.3")
+
+    implementation libraries.cas_server_core_util_api
+
     
-    testImplementation libraries.springboottomcat
+    provided libraries.cas_server_webapp_config
+
 }

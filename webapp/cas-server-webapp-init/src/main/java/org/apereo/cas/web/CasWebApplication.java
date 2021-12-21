@@ -17,7 +17,9 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
+import org.springframework.context.annotation.Import;
 import org.springframework.context.event.EventListener;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.annotation.EnableScheduling;
@@ -31,11 +33,9 @@ import java.time.Instant;
  * @author Misagh Moayyed
  * @since 5.0.0
  */
+@Configuration
+@Import({DefaultCasConfiguration.class})
 @EnableDiscoveryClient
-@SpringBootApplication(exclude = {
-    GroovyTemplateAutoConfiguration.class,
-    DataSourceAutoConfiguration.class
-}, proxyBeanMethods = false)
 @EnableConfigurationProperties(CasConfigurationProperties.class)
 @EnableAsync
 @EnableAspectJAutoProxy(proxyTargetClass = true)

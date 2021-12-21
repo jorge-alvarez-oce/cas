@@ -18,9 +18,10 @@ sourceSets {
     bootRun {
         resources {
             srcDirs new File("//etc/cas/templates/"),
-                    new File("${project(":webapp").getProjectDir()}/cas-server-webapp-resources/src/main/resources/"),
-                    new File("${project(":support").getProjectDir()}/cas-server-support-thymeleaf/src/main/resources/"),
-                    new File("${project(":support").getProjectDir()}/cas-server-support-themes-collection/src/main/resources/")
+                    new File("${project(":webapp").getProjectDir()}/cas-server-webapp-resources/src/main/resources/")
+            //,
+              //      new File("${project(":support").getProjectDir()}/cas-server-support-thymeleaf/src/main/resources/"),
+                //    new File("${project(":support").getProjectDir()}/cas-server-support-themes-collection/src/main/resources/")
         }
     }
 }
@@ -28,32 +29,34 @@ sourceSets {
 apply from: rootProject.file("gradle/springboot.gradle")
 
 dependencies {
-    implementation project(":core:cas-server-core")
-    implementation project(":core:cas-server-core-audit")
-    implementation project(":core:cas-server-core-authentication")
-    implementation project(":core:cas-server-core-configuration")
-    implementation project(":core:cas-server-core-cookie")
-    implementation project(":core:cas-server-core-logout")
-    implementation project(":core:cas-server-core-logging")
-    implementation project(":core:cas-server-core-services")
-    implementation project(":core:cas-server-core-tickets")
-    implementation project(":core:cas-server-core-util")
-    implementation project(":core:cas-server-core-validation")
-    implementation project(":core:cas-server-core-web")
-    implementation project(":core:cas-server-core-notifications")
+    implementation dependencies.create("org.apereo.cas:cas-server-core:6.4.3")
+    implementation dependencies.create("org.apereo.cas:cas-server-core-audit:6.4.3")
 
-    compileOnlyApi project(":support:cas-server-support-jpa-util")
 
-    implementation project(":support:cas-server-support-actions")
-    implementation project(":support:cas-server-support-person-directory")
-    implementation project(":support:cas-server-support-themes")
-    implementation project(":support:cas-server-support-validation")
-    implementation project(":support:cas-server-support-thymeleaf")
-    implementation project(":support:cas-server-support-pm-webflow")
+    implementation dependencies.create("org.apereo.cas:cas-server-core-authentication:6.4.3")
+    implementation dependencies.create("org.apereo.cas:cas-server-core-configuration:6.4.3")
+    implementation dependencies.create("org.apereo.cas:cas-server-core-cookie:6.4.3")
+    implementation dependencies.create("org.apereo.cas:cas-server-core-logout:6.4.3")
+    implementation dependencies.create("org.apereo.cas:cas-server-core-logging:6.4.3")
+    implementation dependencies.create("org.apereo.cas:cas-server-core-services:6.4.3")
+    implementation dependencies.create("org.apereo.cas:cas-server-core-tickets:6.4.3")
+    implementation dependencies.create("org.apereo.cas:cas-server-core-util:6.4.3")
+    implementation dependencies.create("org.apereo.cas:cas-server-core-validation:6.4.3")
+    implementation dependencies.create("org.apereo.cas:cas-server-core-web:6.4.3")
+    implementation dependencies.create("org.apereo.cas:cas-server-core-notifications:6.4.3")
 
-    implementation project(":webapp:cas-server-webapp-config")
-    implementation project(":webapp:cas-server-webapp-init")
-    implementation project(":webapp:cas-server-webapp-resources")
+    compileOnlyApi dependencies.create("org.apereo.cas:cas-server-support-jpa-util:6.4.3")
+
+    implementation dependencies.create("org.apereo.cas:cas-server-support-actions:6.4.3")
+    implementation dependencies.create("org.apereo.cas:cas-server-support-person-directory:6.4.3")
+    implementation dependencies.create("org.apereo.cas:cas-server-support-themes:6.4.3")
+    implementation dependencies.create("org.apereo.cas:cas-server-support-validation:6.4.3")
+    implementation dependencies.create("org.apereo.cas:cas-server-support-thymeleaf:6.4.3")
+    implementation dependencies.create("org.apereo.cas:cas-server-support-pm-webflow:6.4.3")
+
+    implementation dependencies.create("org.apereo.cas:cas-server-webapp-config:6.4.3")
+    implementation dependencies.create("org.apereo.cas:cas-server-webapp-init:6.4.3")
+    implementation dependencies.create("org.apereo.cas:cas-server-webapp-resources:6.4.3")
     
     // Add modules in format compatible with overlay casModules property
     if (project.hasProperty("casModules")) {

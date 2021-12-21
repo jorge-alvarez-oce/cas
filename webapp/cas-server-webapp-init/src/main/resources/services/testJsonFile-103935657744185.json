@@ -1,0 +1,17 @@
+{
+  "@class" : "org.apereo.cas.services.OidcRegisteredService",
+  "id" : 103935657744185,
+  "name" : "testJsonFile",
+  "clientId": "client",
+  "clientSecret": "secret",
+  "serviceId" : "^https://localhost:8082/cas/.*\"",
+  "scopes": [
+    "java.util.HashSet",
+    [
+      "openid",
+      "profile",
+      "app"
+    ]
+  ],
+  "supportedGrantTypes": [ "java.util.HashSet", ["client_credentials"]]
+}
