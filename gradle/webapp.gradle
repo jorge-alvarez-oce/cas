@@ -55,8 +55,8 @@ dependencies {
     implementation dependencies.create("org.apereo.cas:cas-server-support-pm-webflow:6.4.3")
 
     implementation dependencies.create("org.apereo.cas:cas-server-webapp-config:6.4.3")
-    implementation dependencies.create("org.apereo.cas:cas-server-webapp-init:6.4.3")
-    implementation dependencies.create("org.apereo.cas:cas-server-webapp-resources:6.4.3")
+    implementation project(":webapp:cas-server-webapp-init")
+    implementation project(":webapp:cas-server-webapp-resources")
     
     // Add modules in format compatible with overlay casModules property
     if (project.hasProperty("casModules")) {
